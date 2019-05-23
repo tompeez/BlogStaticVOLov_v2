@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="LooupTestPageDef"
+                Package="de.hahn.blog.accessresourcesfrompath.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Lookuptest" RangeSize="25"
+              DataControl="BSVOLOVAppModuleDataControl"
+              id="LookuptestIterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="LookuptestIterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="LookuptestIterator" StaticList="false"
+          Uses="LOV_WeekdayId" id="WeekdayId" DTSupportsMRU="false"/>
+    <list IterBinding="LookuptestIterator" StaticList="false"
+          Uses="LOV_GenderId" id="GenderId" DTSupportsMRU="false"/>
+    <list IterBinding="LookuptestIterator" StaticList="false" Uses="LOV_TitelId"
+          id="TitelId" DTSupportsMRU="false"/>
+    <list IterBinding="LookuptestIterator" StaticList="false"
+          Uses="LOV_PositionId" id="PositionId" DTSupportsMRU="false"/>
+    <action IterBinding="LookuptestIterator" id="First"
+            RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="LookuptestIterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="LookuptestIterator" id="Next"
+            RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="LookuptestIterator" id="Last"
+            RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="LookuptestIterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="BSVOLOVAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction"
+            DataControl="BSVOLOVAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

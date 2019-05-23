@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1">
+          <f:facet name="top">
+            <af:outputText value="Blog Static LOV View" id="ot1" inlineStyle="font-size:x-large;"/>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelSplitter id="ps1" splitterPosition="358">
+              <f:facet name="first">
+                <af:panelStretchLayout id="psl2">
+                  <f:facet name="bottom"/>
+                  <f:facet name="center">
+                    <af:table value="#{bindings.CountriesView1.collectionModel}" var="row" rows="#{bindings.CountriesView1.rangeSize}"
+                              emptyText="#{bindings.CountriesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.CountriesView1.rangeSize}" rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.CountriesView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.CountriesView1.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+                              editingMode="clickToEdit">
+                      <af:column sortProperty="CountryId" sortable="true" headerText="#{bindings.CountriesView1.hints.CountryId.label}" id="c1">
+                        <af:inputText value="#{row.bindings.CountryId.inputValue}" label="#{bindings.CountriesView1.hints.CountryId.label}"
+                                      required="#{bindings.CountriesView1.hints.CountryId.mandatory}"
+                                      columns="#{bindings.CountriesView1.hints.CountryId.displayWidth}"
+                                      maximumLength="#{bindings.CountriesView1.hints.CountryId.precision}"
+                                      shortDesc="#{bindings.CountriesView1.hints.CountryId.tooltip}" id="it2">
+                          <f:validator binding="#{row.bindings.CountryId.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="CountryName" sortable="true" headerText="#{bindings.CountriesView1.hints.CountryName.label}" id="c3">
+                        <af:inputText value="#{row.bindings.CountryName.inputValue}" label="#{bindings.CountriesView1.hints.CountryName.label}"
+                                      required="#{bindings.CountriesView1.hints.CountryName.mandatory}"
+                                      columns="#{bindings.CountriesView1.hints.CountryName.displayWidth}"
+                                      maximumLength="#{bindings.CountriesView1.hints.CountryName.precision}"
+                                      shortDesc="#{bindings.CountriesView1.hints.CountryName.tooltip}" id="it1">
+                          <f:validator binding="#{row.bindings.CountryName.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="RegionId" sortable="true" headerText="#{bindings.CountriesView1.hints.RegionId.label}" id="c2">
+                        <af:selectOneChoice value="#{row.bindings.RegionId.inputValue}" label="#{row.bindings.RegionId.label}"
+                                            required="#{bindings.CountriesView1.hints.RegionId.mandatory}"
+                                            shortDesc="#{bindings.CountriesView1.hints.RegionId.tooltip}" id="soc1">
+                          <f:selectItems value="#{row.bindings.RegionId.items}" id="si1"/>
+                        </af:selectOneChoice>
+                      </af:column>
+                    </af:table>
+                  </f:facet>
+                  <f:facet name="start"/>
+                  <f:facet name="end"/>
+                  <f:facet name="top">
+                    <af:outputText value="CountriesView" id="ot2"/>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelStretchLayout id="psl3">
+                  <f:facet name="bottom"/>
+                  <f:facet name="center">
+                    <af:table value="#{bindings.Countries4StaticRegionView11.collectionModel}" var="row"
+                              rows="#{bindings.Countries4StaticRegionView11.rangeSize}"
+                              emptyText="#{bindings.Countries4StaticRegionView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.Countries4StaticRegionView11.rangeSize}" rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.Countries4StaticRegionView11.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.Countries4StaticRegionView11.collectionModel.makeCurrent}" rowSelection="single" id="t2"
+                              editingMode="clickToEdit">
+                      <af:column sortProperty="CountryId" sortable="true" headerText="#{bindings.Countries4StaticRegionView11.hints.CountryId.label}" id="c4">
+                        <af:inputText value="#{row.bindings.CountryId.inputValue}" label="#{bindings.Countries4StaticRegionView11.hints.CountryId.label}"
+                                      required="#{bindings.Countries4StaticRegionView11.hints.CountryId.mandatory}"
+                                      columns="#{bindings.Countries4StaticRegionView11.hints.CountryId.displayWidth}"
+                                      maximumLength="#{bindings.Countries4StaticRegionView11.hints.CountryId.precision}"
+                                      shortDesc="#{bindings.Countries4StaticRegionView11.hints.CountryId.tooltip}" id="it4">
+                          <f:validator binding="#{row.bindings.CountryId.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="CountryName" sortable="true" headerText="#{bindings.Countries4StaticRegionView11.hints.CountryName.label}"
+                                 id="c5">
+                        <af:inputText value="#{row.bindings.CountryName.inputValue}" label="#{bindings.Countries4StaticRegionView11.hints.CountryName.label}"
+                                      required="#{bindings.Countries4StaticRegionView11.hints.CountryName.mandatory}"
+                                      columns="#{bindings.Countries4StaticRegionView11.hints.CountryName.displayWidth}"
+                                      maximumLength="#{bindings.Countries4StaticRegionView11.hints.CountryName.precision}"
+                                      shortDesc="#{bindings.Countries4StaticRegionView11.hints.CountryName.tooltip}" id="it3">
+                          <f:validator binding="#{row.bindings.CountryName.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="RegionId" sortable="true" headerText="#{bindings.Countries4StaticRegionView11.hints.RegionId.label}" id="c6">
+                        <af:selectOneChoice value="#{row.bindings.RegionId.inputValue}" label="#{row.bindings.RegionId.label}"
+                                            required="#{bindings.Countries4StaticRegionView11.hints.RegionId.mandatory}"
+                                            shortDesc="#{bindings.Countries4StaticRegionView11.hints.RegionId.tooltip}" id="soc2">
+                          <f:selectItems value="#{row.bindings.RegionId.items}" id="si2"/>
+                        </af:selectOneChoice>
+                      </af:column>
+                    </af:table>
+                  </f:facet>
+                  <f:facet name="start"/>
+                  <f:facet name="end"/>
+                  <f:facet name="top">
+                    <af:outputText value="Countries4StaticRegionView" id="ot3"/>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+            </af:panelSplitter>
+            <!-- id="af_one_column_header_stretched"  -->
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

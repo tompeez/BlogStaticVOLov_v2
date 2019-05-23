@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1">
+          <f:facet name="top">
+            <af:outputText value="Lookup Test" id="ot1"
+                           inlineStyle="font-size:large;"/>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelFormLayout id="pfl1">
+              <af:inputText value="#{bindings.Id.inputValue}"
+                            label="#{bindings.Id.hints.label}"
+                            required="#{bindings.Id.hints.mandatory}"
+                            columns="#{bindings.Id.hints.displayWidth}"
+                            maximumLength="#{bindings.Id.hints.precision}"
+                            shortDesc="#{bindings.Id.hints.tooltip}" id="it1"
+                            readOnly="#{bindings.Id.inputValue ne null}">
+                <f:validator binding="#{bindings.Id.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Id.format}"/>
+              </af:inputText>
+              <af:selectOneChoice value="#{bindings.WeekdayId.inputValue}"
+                                  label="#{bindings.WeekdayId.label}"
+                                  required="#{bindings.WeekdayId.hints.mandatory}"
+                                  shortDesc="#{bindings.WeekdayId.hints.tooltip}"
+                                  id="soc3">
+                <f:selectItems value="#{bindings.WeekdayId.items}" id="si2"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.GenderId.inputValue}"
+                                  label="#{bindings.GenderId.label}"
+                                  required="#{bindings.GenderId.hints.mandatory}"
+                                  shortDesc="#{bindings.GenderId.hints.tooltip}"
+                                  id="soc4">
+                <f:selectItems value="#{bindings.GenderId.items}" id="si1"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.TitelId.inputValue}"
+                                  label="#{bindings.TitelId.label}"
+                                  required="#{bindings.TitelId.hints.mandatory}"
+                                  shortDesc="#{bindings.TitelId.hints.tooltip}"
+                                  id="soc1">
+                <f:selectItems value="#{bindings.TitelId.items}" id="si3"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.PositionId.inputValue}"
+                                  label="#{bindings.PositionId.label}"
+                                  required="#{bindings.PositionId.hints.mandatory}"
+                                  shortDesc="#{bindings.PositionId.hints.tooltip}"
+                                  id="soc2">
+                <f:selectItems value="#{bindings.PositionId.items}" id="si4"/>
+              </af:selectOneChoice>
+              <f:facet name="footer">
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                  <af:panelGroupLayout layout="horizontal" id="pgl1">
+                    <af:commandButton actionListener="#{bindings.First.execute}"
+                                      text="First"
+                                      disabled="#{!bindings.First.enabled}"
+                                      partialSubmit="true" id="cb5"/>
+                    <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                      text="Previous"
+                                      disabled="#{!bindings.Previous.enabled}"
+                                      partialSubmit="true" id="cb1"/>
+                    <af:commandButton actionListener="#{bindings.Next.execute}"
+                                      text="Next"
+                                      disabled="#{!bindings.Next.enabled}"
+                                      partialSubmit="true" id="cb3"/>
+                    <af:commandButton actionListener="#{bindings.Last.execute}"
+                                      text="Last"
+                                      disabled="#{!bindings.Last.enabled}"
+                                      partialSubmit="true" id="cb4"/>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="pgl3">
+                    <af:commandButton text="Submit" id="cb2"/>
+                    <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                      text="CreateInsert"
+                                      disabled="#{!bindings.CreateInsert.enabled}"
+                                      id="cb6"/>
+                    <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                      text="Commit"
+                                      disabled="#{!bindings.Commit.enabled}"
+                                      id="cb7"/>
+                    <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                      text="Rollback"
+                                      disabled="#{!bindings.Rollback.enabled}"
+                                      immediate="true" id="cb8">
+                      <af:resetActionListener/>
+                    </af:commandButton>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelFormLayout>
+            <!-- id="af_one_column_header_stretched"  -->
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

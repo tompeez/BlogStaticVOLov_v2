@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.61.92" id="BSVOLOVPageDef"
+                Package="de.hahn.blog.accessresourcesfrompath.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Countries4StaticRegionView1" RangeSize="25" DataControl="BSVOLOVAppModuleDataControl" id="Countries4StaticRegionView1Iterator"/>
+    <iterator Binds="CountriesView1" RangeSize="25" DataControl="BSVOLOVAppModuleDataControl" id="CountriesView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Countries4StaticRegionView1Iterator" id="Countries4StaticRegionView11">
+      <nodeDefinition DefName="de.hahn.blog.accessresourcesfrompath.model.dataaccess.Countries4StaticRegionView" Name="Countries4StaticRegionView110">
+        <AttrNames>
+          <Item Value="CountryId"/>
+          <Item Value="CountryName"/>
+          <Item Value="RegionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CountriesView1Iterator" id="CountriesView1">
+      <nodeDefinition DefName="de.hahn.blog.accessresourcesfrompath.model.dataaccess.CountriesView" Name="CountriesView10">
+        <AttrNames>
+          <Item Value="CountryId"/>
+          <Item Value="CountryName"/>
+          <Item Value="RegionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
